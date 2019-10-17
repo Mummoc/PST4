@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">PST4</string>
+    <string name="signIn_user_text">UserName</string>
+    <string name="signIn_password_text">PassWord</string>
+    <string name="signIn_connect">Connect</string>
+    <string name="signIn_forgot_password">Forgotten password ?</string>
+    <string name="connect_sign_in_button">Sign In</string>
+    <string name="connect_sign_up_button">Sign Up</string>
+</resources>
