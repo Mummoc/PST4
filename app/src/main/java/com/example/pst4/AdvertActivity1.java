@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 public class AdvertActivity1 extends AppCompatActivity {
 
+    private Button suivant;
     private Button retour;
 
     @Override
@@ -17,17 +18,26 @@ public class AdvertActivity1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_advert1);
 
+        suivant = findViewById(R.id.suiv);
+        suivant.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openAdvertActivity2();
+            }
+        });
         retour = findViewById(R.id.retour);
         retour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openAdvertActivity2();
+                openAdvertActivity0();
             }
         });
     }
     public void openAdvertActivity2() {
         Intent intent = new Intent(this, AdvertActivity2.class);
         startActivity(intent);
+    }
+    public void openAdvertActivity0() {
     }
 }
 

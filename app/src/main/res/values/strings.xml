@@ -7,9 +7,9 @@
     <string name="connect_sign_in_button">Sign In</string>
     <string name="connect_sign_up_button">Sign Up</string>
     <string name="neuf">NEUF</string>
-    <string name="suivant">Suivant</string>
-    <string name="retour">Retour</string>
     <string name="occasion">Occasion</string>
     <string name="publication_d_un_nouveau_v_hicule">Publication_d_un_nouveau_v_hicule</string>
     <string name="titre">Votre véhicule est :</string>
+    <string name="suivant">Suivant</string>
+    <string name="retour">Retour</string>
 </resources>
