@@ -8,24 +8,21 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class AdvertActivity1 extends AppCompatActivity {
+public class AdvertActivity0 extends AppCompatActivity {
 
     private Button suivant;
     private Button retour;
-    private Button occasion;
-    private Button neuf;
-    public static Integer etat = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_advert1);
+        setContentView(R.layout.activity_advert0);
 
         suivant = findViewById(R.id.suiv);
         suivant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openAdvertActivity2();
+                openAdvertActivity1();
             }
         });
         retour = findViewById(R.id.retour);
@@ -35,23 +32,14 @@ public class AdvertActivity1 extends AppCompatActivity {
                 openAdvertActivity0();
             }
         });
-        neuf = findViewById(R.id.buttonNeuf);
-        neuf.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                etat=1;
-            }
-        });
-        occasion = findViewById(R.id.buttonOccasion);
-        occasion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                etat=2;
-            }
-        });
+
+
+        Integer etat = AdvertActivity1.etat;
+        TextView etatText = findViewById(R.id.etat);
+        etatText.setText("Etat : "+etat);
     }
-    public void openAdvertActivity2() {
-        Intent intent = new Intent(this, AdvertActivity2.class);
+    public void openAdvertActivity1() {
+        Intent intent = new Intent(this, AdvertActivity1.class);
         startActivity(intent);
     }
     public void openAdvertActivity0() {
@@ -59,5 +47,3 @@ public class AdvertActivity1 extends AppCompatActivity {
         startActivity(intent);
     }
 }
-
-

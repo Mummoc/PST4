@@ -12,4 +12,5 @@
     <string name="titre">Votre véhicule est :</string>
     <string name="suivant">Suivant</string>
     <string name="retour">Retour</string>
+    <string name="etat">Etat :</string>
 </resources>
