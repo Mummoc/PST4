@@ -15,4 +15,7 @@
     <string name="nombres_de_portes">Nombres de portes</string>
     <string name="type_de_coffre">Type de coffre</string>
     <string name="option">Option</string>
+    <string name="appareil_photo">Appareil Photo</string>
+    <string name="galerie">Galerie</string>
+    <string name="photo_voiture">Ajouter une photo de votre voiture</string>
 </resources>
