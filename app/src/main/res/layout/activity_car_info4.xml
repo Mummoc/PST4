@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/color"
+        android:text="@string/couleur"
+        android:textSize="20sp"
+        android:layout_marginTop="20mm"
+        android:layout_marginLeft="10mm"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nbr_portes"
+        android:textSize="20sp"
+        android:text="@string/nombres_de_portes"
+        android:layout_below="@+id/color"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10mm"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/coffre"
+        android:text="@string/type_de_coffre"
+        android:textSize="20sp"
+        android:layout_below="@+id/nbr_portes"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10mm"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/option"
+        android:textSize="20sp"
+        android:text="@string/option"
+        android:layout_below="@+id/coffre"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10mm"/>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/yearcraft"
+        android:text="@string/annee_de_fabrication"
+        android:textSize="20sp"
+        android:layout_marginTop="20mm"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/first_circulation"
+        android:text="@string/mise_en_circulation"
+        android:textSize="20sp"
+        android:layout_below="@+id/yearcraft"
+        android:layout_marginTop="30dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/immatriculation"
+        android:text="@string/immatriculation"
+        android:textSize="20dp"
+        android:layout_below="@+id/first_circulation"
+        android:layout_marginTop="40dp"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textfield_immatriculation"
+        android:inputType="number"
+        android:layout_below="@+id/immatriculation"
+        android:layout_marginTop="40dp"
+        />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/switch_first_hand"
+        android:text="@string/first_hand"
+        android:textSize="20dp"
+        android:textOff="OFF"
+        android:textOn="ON"
+        android:layout_below="@+id/textfield_immatriculation"
+        android:layout_marginTop="40dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/kilometrage"
+        android:text="@string/kilometrage"
+        android:textSize="32dp"
+        android:layout_below="@+id/switch_first_hand"
+        android:layout_marginTop="40dp"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textfield_kilometrage"
+        android:inputType="number"
+        android:layout_below="@+id/kilometrage"
+        />
+
+</RelativeLayout>
