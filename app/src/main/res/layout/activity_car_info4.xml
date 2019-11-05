@@ -10,6 +10,12 @@
         android:textSize="20sp"
         android:layout_marginTop="20mm"
         android:layout_marginLeft="10mm"/>
+    <Spinner
+        android:id="@+id/spinner_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/color"
+        android:layout_toRightOf="@+id/color"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -20,6 +26,12 @@
         android:layout_marginTop="30dp"
         android:layout_marginLeft="10mm"
         />
+    <Spinner
+        android:id="@+id/spinner_nbr_portes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/nbr_portes"
+        android:layout_toRightOf="@+id/nbr_portes"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -30,6 +42,12 @@
         android:layout_below="@+id/nbr_portes"
         android:layout_marginTop="30dp"
         android:layout_marginLeft="10mm"/>
+    <Spinner
+        android:id="@+id/spinner_type_coffre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/coffre"
+        android:layout_toRightOf="@+id/coffre"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,6 +57,12 @@
         android:layout_below="@+id/coffre"
         android:layout_marginTop="30dp"
         android:layout_marginLeft="10mm"/>
+    <Spinner
+        android:id="@+id/spinner_option"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/option"
+        android:layout_toRightOf="@+id/option"/>
 
 
 

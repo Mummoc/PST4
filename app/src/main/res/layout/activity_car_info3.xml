@@ -11,6 +11,12 @@
         android:textSize="20sp"
         android:layout_marginTop="20mm"
         />
+    <Spinner
+        android:id="@+id/spinner_marque"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/yearcraft"
+        android:layout_toEndOf="@+id/yearcraft"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -20,6 +26,12 @@
         android:layout_below="@+id/yearcraft"
         android:layout_marginTop="30dp"
         />
+    <Spinner
+        android:id="@+id/spinner_mise_circulation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/first_circulation"
+        android:layout_toEndOf="@+id/first_circulation"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
