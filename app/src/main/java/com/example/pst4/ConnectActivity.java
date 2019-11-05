@@ -14,5 +14,9 @@ public class ConnectActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_car_info3);
 
+        Spinner spinner = findViewById(R.id.spinner_marque);
+        ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.spinner_marque, R.layout.support_simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+
     }
 }

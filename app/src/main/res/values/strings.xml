@@ -18,4 +18,10 @@
     <string name="appareil_photo">Appareil Photo</string>
     <string name="galerie">Galerie</string>
     <string name="photo_voiture">Ajouter une photo de votre voiture</string>
+    <string-array name="spinner_marque">
+        <item>Renault</item>
+        <item>Peugeot</item>
+        <item>Citroën</item>
+        <item>DS</item>
+    </string-array>
 </resources>
