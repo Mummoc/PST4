@@ -2,6 +2,7 @@ package com.example.pst4;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Region;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -13,10 +14,7 @@ public class ConnectActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_car_info3);
-
-        Spinner spinner = findViewById(R.id.spinner_marque);
-        ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.spinner_marque, R.layout.support_simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-
+        Intent marque = new Intent(ConnectActivity.this, car_info2.class);
+        startActivity(marque);
     }
 }
