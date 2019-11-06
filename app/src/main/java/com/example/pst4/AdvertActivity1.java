@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 public class AdvertActivity1 extends AppCompatActivity {
 
@@ -19,20 +18,20 @@ public class AdvertActivity1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_advert1);
+        setContentView(R.layout.activity_car_info1);
 
         suivant = findViewById(R.id.suiv);
         suivant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openAdvertActivity2();
+                suivant();
             }
         });
         retour = findViewById(R.id.retour);
         retour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openAdvertActivity0();
+                retour();
             }
         });
         neuf = findViewById(R.id.buttonNeuf);
@@ -50,11 +49,11 @@ public class AdvertActivity1 extends AppCompatActivity {
             }
         });
     }
-    public void openAdvertActivity2() {
+    public void suivant() {
         Intent intent = new Intent(this, AdvertActivity2.class);
         startActivity(intent);
     }
-    public void openAdvertActivity0() {
+    public void retour() {
         Intent intent = new Intent(this, AdvertActivity0.class);
         startActivity(intent);
     }
