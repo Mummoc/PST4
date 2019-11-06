@@ -6,6 +6,24 @@
     <string name="signIn_forgot_password">Forgotten password ?</string>
     <string name="connect_sign_in_button">Sign In</string>
     <string name="connect_sign_up_button">Sign Up</string>
+    <string name="annee_de_fabrication">Année de fabrication</string>
+    <string name="mise_en_circulation">1ère mise en circulation</string>
+    <string name="immatriculation">Plaque d\'immatriculation</string>
+    <string name="first_hand">1ère main</string>
+    <string name="kilometrage">Kilométrage</string>
+    <string name="couleur">Couleur</string>
+    <string name="nombres_de_portes">Nombres de portes</string>
+    <string name="type_de_coffre">Type de coffre</string>
+    <string name="option">Option</string>
+    <string name="appareil_photo">Appareil Photo</string>
+    <string name="galerie">Galerie</string>
+    <string name="photo_voiture">Ajouter une photo de votre voiture</string>
+    <string-array name="spinner_marque">
+        <item>Renault</item>
+        <item>Peugeot</item>
+        <item>Citroën</item>
+        <item>DS</item>
+    </string-array>
     <string name="neuf">NEUF</string>
     <string name="occasion">Occasion</string>
     <string name="publication_d_un_nouveau_v_hicule">Publication_d_un_nouveau_v_hicule</string>
