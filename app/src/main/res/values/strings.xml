@@ -24,4 +24,11 @@
         <item>Citroën</item>
         <item>DS</item>
     </string-array>
+    <string name="neuf">NEUF</string>
+    <string name="occasion">Occasion</string>
+    <string name="publication_d_un_nouveau_v_hicule">Publication_d_un_nouveau_v_hicule</string>
+    <string name="titre">Votre véhicule est :</string>
+    <string name="suivant">Suivant</string>
+    <string name="retour">Retour</string>
+    <string name="etat">Etat :</string>
 </resources>
