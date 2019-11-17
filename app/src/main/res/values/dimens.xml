@@ -2,4 +2,6 @@
 <resources>
     <dimen name="connect_image_margin">100dp</dimen>
     <dimen name="connect_button_margin">15dp</dimen>
+    <dimen name="width_textfield">40mm</dimen>
+    <dimen name="espace_entre_element">40dp</dimen>
 </resources>

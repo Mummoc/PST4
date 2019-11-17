@@ -1,56 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    >
+    <!--<com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginRight="2dp"
+        android:minHeight="200dp"></com.google.android.material.card.MaterialCardView>-->
 
     <TextView
+        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/yearcraft"
         android:text="@string/annee_de_fabrication"
         android:textSize="20sp"
         android:layout_marginTop="20mm"
-        />
+        /><!---->
+
     <Spinner
+        android:layout_centerHorizontal="true"
         android:id="@+id/spinner_yearcraft"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/yearcraft"
-        android:layout_toEndOf="@+id/yearcraft"/>
+        android:layout_below="@+id/yearcraft"/>
     <TextView
+        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/first_circulation"
         android:text="@string/mise_en_circulation"
         android:textSize="20sp"
         android:layout_below="@+id/yearcraft"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         />
     <Spinner
+        android:layout_centerHorizontal="true"
         android:id="@+id/spinner_mise_circulation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/first_circulation"
-        android:layout_toEndOf="@+id/first_circulation"/>
+        android:layout_below="@+id/first_circulation"/>
+
+
     <TextView
+        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/immatriculation"
         android:text="@string/immatriculation"
         android:textSize="20dp"
         android:layout_below="@+id/first_circulation"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="50dp"
         />
-    <EditText
+
+    <!--<Widget.MaterialComponents.TextInputLayout.OutlinedBox
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textfield_immatriculation"
         android:inputType="number"
         android:layout_below="@+id/immatriculation"
         android:layout_marginTop="40dp"
-        />
+        />-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_centerHorizontal="true"
+        android:layout_width="@dimen/width_textfield"
+        android:layout_height="wrap_content"
+        android:id="@+id/textfield_immatriculation"
+        android:hint="@string/numero_plaque"
+        android:layout_below="@+id/immatriculation"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <!-- Rajouter le type number-->
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
 
-    <Switch
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+   <!-- <Switch
+        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/switch_first_hand"
@@ -60,22 +92,45 @@
         android:textOn="ON"
         android:layout_below="@+id/textfield_immatriculation"
         android:layout_marginTop="40dp"
-        />
+        />-->
+
+    <CheckBox
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/first_hand"
+        android:textSize="20dp"
+        android:id="@+id/switch_first_hand"
+        android:layout_below="@+id/textfield_immatriculation"
+        android:layout_marginTop="50dp"
+         />
+
     <TextView
+        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/kilometrage"
         android:text="@string/kilometrage"
-        android:textSize="32dp"
+        android:textSize="20dp"
         android:layout_below="@+id/switch_first_hand"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="50dp"
         />
-    <EditText
-        android:layout_width="match_parent"
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_centerHorizontal="true"
+        android:layout_width="@dimen/width_textfield"
         android:layout_height="wrap_content"
         android:id="@+id/textfield_kilometrage"
-        android:inputType="number"
         android:layout_below="@+id/kilometrage"
-        />
+        android:hint="@string/nombre_kilometre"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
 
 </RelativeLayout>

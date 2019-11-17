@@ -18,6 +18,8 @@
     <string name="appareil_photo">Appareil Photo</string>
     <string name="galerie">Galerie</string>
     <string name="photo_voiture">Ajouter une photo de votre voiture</string>
+    <string name="numero_plaque">Numéro de plaque</string>
+    <string name="nombre_kilometre">Kilométrage</string>
     <string-array name="spinner_marque">
         <item>Renault</item>
         <item>Peugeot</item>

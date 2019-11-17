@@ -23,7 +23,7 @@
         android:textSize="20sp"
         android:text="@string/nombres_de_portes"
         android:layout_below="@+id/color"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="@dimen/espace_entre_element"
         android:layout_marginLeft="10mm"
         />
     <Spinner
@@ -40,7 +40,7 @@
         android:text="@string/type_de_coffre"
         android:textSize="20sp"
         android:layout_below="@+id/nbr_portes"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="@dimen/espace_entre_element"
         android:layout_marginLeft="10mm"/>
     <Spinner
         android:id="@+id/spinner_type_coffre"
@@ -55,7 +55,7 @@
         android:textSize="20sp"
         android:text="@string/option"
         android:layout_below="@+id/coffre"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="@dimen/espace_entre_element"
         android:layout_marginLeft="10mm"/>
     <Spinner
         android:id="@+id/spinner_option"
