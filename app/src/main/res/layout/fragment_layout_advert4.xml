@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".AdvertActivity2">
+    android:layout_width="match_parent" android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="choix caracteristiques" />
+        android:id="@+id/Titre"
+        android:text="@string/photo_voiture"
+        android:layout_marginTop="30mm"
+        android:layout_centerHorizontal="true"/>
+    <Button
+        android:layout_width="20mm"
+        android:layout_height="20mm"
+        android:id="@+id/appareil_photo"
+        android:text="@string/appareil_photo"
+        android:layout_centerInParent="true"/>
+    <Button
+        android:layout_width="20mm"
+        android:layout_height="20mm"
+        android:id="@+id/galery"
+        android:text="@string/galerie"
+        android:layout_toRightOf="@+id/appareil_photo"
+        android:layout_centerInParent="true"/>
 
     <Button
         android:id="@+id/suiv"
@@ -26,7 +37,7 @@
         android:layout_marginBottom="38dp"
         android:text="@string/suivant" />
 
-    <Button
+   <!-- <Button
         android:id="@+id/retour"
         android:text="@string/retour"
         android:layout_width="wrap_content"
@@ -38,5 +49,7 @@
         android:layout_marginStart="26dp"
         android:layout_marginTop="643dp"
         android:layout_marginEnd="297dp"
-        android:layout_marginBottom="40dp" />
+        android:layout_marginBottom="40dp" />-->
+
+
 </RelativeLayout>
