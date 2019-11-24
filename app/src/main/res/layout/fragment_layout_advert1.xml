@@ -5,7 +5,25 @@
     <Spinner
         android:id="@+id/spinner_marque"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/spinner_modele"/>
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner_modele"
+        android:layout_marginBottom="100dp"
+        android:layout_centerInParent="true"/>
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Spinner_version"
+        android:layout_below="@+id/spinner_modele"
+        android:layout_marginBottom="30dp"
+        android:layout_centerHorizontal="true"/>
+
 
     <TextView
         android:layout_width="wrap_content"

@@ -37,12 +37,27 @@
         android:layout_below="@+id/yearcraft"
         android:layout_marginTop="50dp"
         />
-    <Spinner
+    <!--<Spinner
         android:layout_centerHorizontal="true"
         android:id="@+id/spinner_mise_circulation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/first_circulation"/>
+        android:layout_below="@+id/first_circulation"/>-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner_mise_circulation"
+        android:layout_below="@+id/first_circulation"
+        >
+        <!-- Rajouter le type number-->
+        <AutoCompleteTextView
+            android:id="@+id/filled_exposed"
+            android:hint="Auto Compleete text view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:editable="false"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
 
     <TextView

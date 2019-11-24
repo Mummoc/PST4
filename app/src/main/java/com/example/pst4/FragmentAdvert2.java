@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
@@ -27,13 +28,18 @@ public class FragmentAdvert2 extends Fragment {
             age.add(Integer.toString(i));
         }
         ArrayAdapter<Integer> spinnerArrayAdapter = new ArrayAdapter<Integer>(Objects.requireNonNull(getContext()), R.layout.support_simple_spinner_dropdown_item, age);
+        ArrayAdapter<String> dropdownArrayAdapter = new ArrayAdapter<String>(Objects.requireNonNull(getContext()), R.layout.dropdown_menu_popup_item, age);
         spinnerArrayAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+        dropdownArrayAdapter.setDropDownViewResource(R.layout.dropdown_menu_popup_item);
 
         Spinner spinnerMarque = view.findViewById(R.id.spinner_yearcraft);
-        Spinner spinnerMiseEnCirculation = view.findViewById(R.id.spinner_mise_circulation);
+        //Spinner spinnerMiseEnCirculation = view.findViewById(R.id.spinner_mise_circulation);
+
+        AutoCompleteTextView spinnerMiseEnCirculation = view.findViewById(R.id.filled_exposed);
+
 
         spinnerMarque.setAdapter(spinnerArrayAdapter);
-        spinnerMiseEnCirculation.setAdapter(spinnerArrayAdapter);
+        spinnerMiseEnCirculation.setAdapter(dropdownArrayAdapter);
 
         return view;
     }

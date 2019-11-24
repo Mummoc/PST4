@@ -28,6 +28,7 @@ public class FragmentAdvert1 extends Fragment {
         for (int i = 1900; i<2019; i++){
             age.add(Integer.toString(i));
         }
+
         ArrayAdapter<Integer> spinnerArrayAdapter = new ArrayAdapter<Integer>(Objects.requireNonNull(getContext()), R.layout.support_simple_spinner_dropdown_item, age);
         spinnerArrayAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
 
