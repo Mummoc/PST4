@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical"
     tools:context=".welcome_page"
     android:background="@drawable/gradient_background">
 
@@ -18,12 +20,13 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
             android:src="@drawable/logo3" />
 
         <RelativeLayout
-            android:id="@+id/relay1"
+            android:id="@+id/rellay1"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:visibility="gone"
@@ -56,10 +59,11 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/relay2"
+        android:id="@+id/rellay2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:visibility="gone"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:layout_marginBottom="40dp">
