@@ -13,8 +13,6 @@ public class ConnectActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_car_info3);
-        Intent marque = new Intent(ConnectActivity.this, car_info2.class);
-        startActivity(marque);
+        setContentView(R.layout.activity_connect);
     }
 }
