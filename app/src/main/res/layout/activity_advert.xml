@@ -19,22 +19,31 @@
         android:layout_height="wrap_content"
         android:id="@+id/search"
         android:layout_above="@id/retour"/>
-    <!--<Button
+    <Button
         android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:text="bouton suivant"
-        />-->
-    <com.google.android.material.button.MaterialButton
+        android:background="@drawable/shape_rounded_button"
+        />
+    <!--<com.google.android.material.button.MaterialButton
         android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:text="Submit"
-        app:icon="@drawable/round_arrow_forward_black_18dp" />
+        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+        app:icon="@drawable/round_arrow_forward_black_18dp"
+        android:background="@drawable/shape_rounded_button"/>-->
+    <!--<ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:id="@+id/submit"
+        android:src="@drawable/ic_arrow_forward_24px"/>-->
 
     <Button
         android:id="@+id/retour"

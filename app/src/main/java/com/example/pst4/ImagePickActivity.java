@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import java.io.FileNotFoundException;
@@ -18,12 +19,20 @@ public class ImagePickActivity extends Activity {
     private static  final int REQUEST_CODE = 1;
     private Bitmap bitmap;
     private ImageView imageView;
+    Button button;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         imageView = findViewById(R.id.result);
+        button = findViewById(R.id.button_takephoto);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ImagePickActivity.this.onClick(v);
+            }
+        });
     }
 
     public void onClick(View view){
@@ -61,9 +70,5 @@ public class ImagePickActivity extends Activity {
 
         }
         super.onActivityResult(requestCode, resultCode, data);
-    }
-
-    public ImagePickActivity(Bitmap bitmap) {
-        this.bitmap = bitmap;
     }
 }

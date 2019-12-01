@@ -1,17 +1,20 @@
 package com.example.pst4;
 
-import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.pst4.Vue.FragmentAdvert1;
+import com.example.pst4.Vue.FragmentAdvert2;
+import com.example.pst4.Vue.FragmentAdvert3;
+import com.example.pst4.Vue.FragmentAdvert4;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-public class AdvertActivity1 extends AppCompatActivity {
+public class AdvertActivity extends AppCompatActivity {
 
     private Button suivant;
     private Button retour;
@@ -22,20 +25,13 @@ public class AdvertActivity1 extends AppCompatActivity {
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);//fragment_layout_advert0
+        setContentView(R.layout.activity_advert);//activity_advert
 
-        Button takephoto = findViewById(R.id.button_takephoto);
-        takephoto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Bitmap bitmap;
-                ImagePickActivity imagePickActivity = new ImagePickActivity(bitmap);
-                imagePickActivity.onClick(view);
-            }
-        });
+       /* ImagePickActivity imagePickActivity = new ImagePickActivity();
+        imagePickActivity.onCreate(savedInstanceState);*/
 
 // CHANGER LACTIVTY DE DEPART///////////////////////////////////////////////////////////////////
-        /*FragmentManager fm1 = getSupportFragmentManager();
+        FragmentManager fm1 = getSupportFragmentManager();
         final FragmentTransaction ftStack = fm1.beginTransaction();
         final FragmentTransaction ftFrag1 = fm1.beginTransaction();
         final FragmentTransaction ftFrag2 = fm1.beginTransaction();
@@ -43,7 +39,7 @@ public class AdvertActivity1 extends AppCompatActivity {
         final FragmentTransaction ftFrag4 = fm1.beginTransaction();
 
 
-        ftStack.add(R.id.fragment_container_content, new FragmentAdvert1()); //new SampleFragment()
+        ftStack.add(R.id.fragment_container_content, new FragmentAdvert1()); //new BackAndForwardFragment()
 
         Log.d(" fragment", "Add fragment");
         ftStack.commit();
@@ -79,17 +75,8 @@ public class AdvertActivity1 extends AppCompatActivity {
                         break;
                 }
             }
-        });*/
+        });
 
-    }
-
-    public void openAdvertActivity2() {
-        Intent intent = new Intent(this, AdvertActivity2.class);
-        startActivity(intent);
-    }
-    public void openAdvertActivity0() {
-        Intent intent = new Intent(this, AdvertActivity0.class);
-        startActivity(intent);
     }
 }
 
