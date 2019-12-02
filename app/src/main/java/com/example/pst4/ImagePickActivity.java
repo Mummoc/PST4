@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -26,16 +25,11 @@ public class ImagePickActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         imageView = findViewById(R.id.result);
-        button = findViewById(R.id.button_takephoto);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ImagePickActivity.this.onClick(v);
-            }
-        });
+
+        searchPicture();
     }
 
-    public void onClick(View view){
+    public void searchPicture(){
         Intent intent = new Intent();
         intent.setType("image/*");
 

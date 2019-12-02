@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.pst4.Vue.FragmentAdvert0;
 import com.example.pst4.Vue.FragmentAdvert1;
 import com.example.pst4.Vue.FragmentAdvert2;
 import com.example.pst4.Vue.FragmentAdvert3;
@@ -20,7 +21,7 @@ public class AdvertActivity extends AppCompatActivity {
     private Button retour;
     private Button occasion;
     private Button neuf;
-    public static Integer etat = 0;
+    public Integer etat = 0;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -39,12 +40,15 @@ public class AdvertActivity extends AppCompatActivity {
         final FragmentTransaction ftFrag4 = fm1.beginTransaction();
 
 
-        ftStack.add(R.id.fragment_container_content, new FragmentAdvert1()); //new BackAndForwardFragment()
+        ftStack.add(R.id.fragment_container_content, new FragmentAdvert0()); //new BackAndForwardFragment()
 
         Log.d(" fragment", "Add fragment");
         ftStack.commit();
 
         suivant = findViewById(R.id.submit);
+        retour = findViewById(R.id.retour);
+
+
         suivant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,6 +81,18 @@ public class AdvertActivity extends AppCompatActivity {
             }
         });
 
+        retour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }
 

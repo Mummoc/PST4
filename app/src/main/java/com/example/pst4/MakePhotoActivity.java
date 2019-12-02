@@ -2,29 +2,21 @@ package com.example.pst4;
 
 import android.Manifest;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
-import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.core.content.FileProvider;
 
 public class MakePhotoActivity extends Activity {
     final static String DEBUG_TAG = "MakePhotoActivity";
@@ -33,174 +25,64 @@ public class MakePhotoActivity extends Activity {
     public static final int REQUEST_ID_MULTIPLE_PERMISSIONS = 1;
     private static final int REQUEST_IMAGE_CAPTURE = 1;
     private static final int REQUEST_TAKE_PHOTO = 1;
+    private static final int TAKE_PICTURE = 1;
+    private Uri imageUri;
     Button makephoto;
     ImageView imageView;
     String currentPhotoPath;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-       imageView = findViewById(R.id.result);
-        makephoto = findViewById(R.id.button_takephoto);
-        makephoto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dispatchTakePictureIntent();
-            }
-        });
+        requestPermissions();
 
-       /* if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA)) {
-            Toast.makeText(this, "No camera oon this device", Toast.LENGTH_LONG).show();
+    }
+
+    protected void requestPermissions(){
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, REQUEST_TAKE_PHOTO);
         } else {
-            cameraid = findFrontFacingCamera();
-            if (cameraid < 0) {
-                Toast.makeText(this, "No front facing camera found.", Toast.LENGTH_LONG).show();
-            } else {
-                camera = Camera.open();
-            }
-        }*/
-    }
-
-    private void dispatchTakePictureIntent() {
-        Intent takePictureIntent = new Intent((MediaStore.ACTION_IMAGE_CAPTURE));
-        if (takePictureIntent.resolveActivity(getPackageManager()) != null){
-            //startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-            File photoFile = null;
-            try {
-                photoFile = createImagefile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            if (photoFile != null){
-                Uri photoURI = FileProvider.getUriForFile(this,"com.example.android.fileprovider",photoFile);
-                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
-                startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
-            }
-            //startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+            launchFeature();
         }
-    }
-
-    private File createImagefile() throws IOException {
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        String imageFileName = "JPEG_" + timeStamp + "_";
-        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-        File image = File.createTempFile(imageFileName,".jpg",storageDir);
-        currentPhotoPath = image.getAbsolutePath();
-        return image;
-    }
-
-    private void galleryAddPic() {
-        Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
-        File f = new File(currentPhotoPath);
-        Uri contentUri = Uri.fromFile(f);
-        mediaScanIntent.setData(contentUri);
-        this.sendBroadcast(mediaScanIntent);
-
-    }
-
-    public static List<String> checkAndRequestPermissions(Context context){
-        int camera = ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA);
-        int readStorage = ContextCompat.checkSelfPermission(context, Manifest.permission.READ_EXTERNAL_STORAGE);
-        int writeStorage = ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE);
-        int fineLoc = ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION);
-        int coarseLoc = ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION);
-
-        List<String> listPermissionsNeeded = new ArrayList<>();
-
-        if (camera != PackageManager.PERMISSION_GRANTED){
-            listPermissionsNeeded.add(Manifest.permission.CAMERA);
-        }
-
-        if (readStorage != PackageManager.PERMISSION_GRANTED){
-            listPermissionsNeeded.add(Manifest.permission.READ_EXTERNAL_STORAGE);
-        }
-
-        if (writeStorage != PackageManager.PERMISSION_GRANTED){
-            listPermissionsNeeded.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
-        }
-
-        if (fineLoc != PackageManager.PERMISSION_GRANTED){
-            listPermissionsNeeded.add(Manifest.permission.ACCESS_FINE_LOCATION);
-        }
-
-        if (coarseLoc != PackageManager.PERMISSION_GRANTED){
-            listPermissionsNeeded.add(Manifest.permission.ACCESS_COARSE_LOCATION);
-        }
-
-        return listPermissionsNeeded;
-    }
-
-    private boolean permissions(List<String> listPermissionsNeeded){
-
-        if (!listPermissionsNeeded.isEmpty()){
-            ActivityCompat.requestPermissions(this, listPermissionsNeeded.toArray(new String[listPermissionsNeeded.size()]), REQUEST_ID_MULTIPLE_PERMISSIONS);
-            return false;
-        }
-
-        return true;
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
-        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK){
-            Bundle extras = data.getExtras();
-            Bitmap imageBitmap = (Bitmap) extras.get("data");
-            imageView.setImageBitmap(imageBitmap);
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == TAKE_PICTURE && resultCode == RESULT_OK){
+            Bitmap bitmap = (Bitmap) data.getExtras().get("data");
+            imageView.setImageBitmap(bitmap);
         }
-
-
-        /* super.onActivityResult(requestCode, resultCode, data);
-
-        if(requestCode == REQUEST_ID_IMAGE_CAPTURE){
-            if (resultCode == RESULT_OK){
-                Bitmap bp = (Bitmap) data.getExtras().get("data");
-                imageView.setImageBitmap(bp);
-            } else if (resultCode == RESULT_CANCELED){
-                Toast.makeText(this, "Action canceled", Toast.LENGTH_LONG).show();
-            } else {
-                Toast.makeText(this, "Action failed", Toast.LENGTH_LONG).show();
-            }
-        }*/
-
-    }
-
-   /* @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-
-        switch (requestCode){
-            case REQUEST_ID_READ_WRITE_PERMISSION: {
-                if (grantResults.length > 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] == PackageManager.PERMISSION_GRANTED){
-                    Toast.makeText(this, "Permission granted", Toast.LENGTH_LONG).show();
-                }
-            }
-        }
-    }*/
-
-    /*private int findFrontFacingCamera() {
-        int cameraId = -1;
-        int numberOfCameras = Camera.getNumberOfCameras();
-        for (int i = 0; i<numberOfCameras; i++){
-            Camera.CameraInfo info = new Camera.CameraInfo();
-            Camera.getCameraInfo(i, info);
-            if (info.facing == android.hardware.Camera.CameraInfo.CAMERA_FACING_FRONT){
-                Log.d(DEBUG_TAG, "Camera found");
-                cameraId = i;
-                break;
-            }
-        }
-        return cameraId;
     }
 
     @Override
-    protected void onPause() {
-        if (camera != null){
-            camera.release();
-            camera = null;
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode){
+            case REQUEST_TAKE_PHOTO: {
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                    launchFeature();
+                } else {
+                    disableFeature();
+                }
+                return;
+            }
         }
-        super.onPause();
-    }*/
+    }
+
+    private void launchFeature() {
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent, TAKE_PICTURE);
+    }
+
+    private void disableFeature(){
+        makephoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MakePhotoActivity.this, "Vous devez donnez la permission CAMERA", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 }
