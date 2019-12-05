@@ -22,14 +22,6 @@ public class FragmentAdvert0 extends Fragment {
         return view;
     }
 
-    public int getEtat() {
-        return etat;
-    }
-
-    public void setEtat(int etat) {
-        this.etat = etat;
-    }
-
     private int etatVoiture(View view, int button1, int button2) {
         Button b1 = view.findViewById(button1);
         Button b2 = view.findViewById(button2);
@@ -49,5 +41,13 @@ public class FragmentAdvert0 extends Fragment {
 
 
         return etat;
+    }
+
+    public int getEtat() {
+        return etat;
+    }
+
+    public void setEtat(int etat) {
+        this.etat = etat;
     }
 }

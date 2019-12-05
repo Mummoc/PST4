@@ -18,6 +18,10 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 public class FragmentAdvert3 extends Fragment {
+    String couleurVoiture;
+    String nbrDePortes;
+    String typeDeCoffre;
+    String options;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -58,8 +62,45 @@ public class FragmentAdvert3 extends Fragment {
         spinnerNbrPortes.setAdapter(spinnerNbrPortesArrayAdapter);
         spinnerColor.setAdapter(spinnerColorArrayAdapter);
         spinnerTypeCoffre.setAdapter(spinnerTypeCoffreArrayAdapter);
-        spinnerOption.setAdapter(spinnerOptionArrayAdapter)
-        ;
+        spinnerOption.setAdapter(spinnerOptionArrayAdapter);
+
+        couleurVoiture = spinnerColor.getSelectedItem().toString();
+        nbrDePortes = spinnerNbrPortes.getSelectedItem().toString();
+        typeDeCoffre = spinnerTypeCoffre.getSelectedItem().toString();
+        options = spinnerOption.getSelectedItem().toString();
+
         return view;
+    }
+
+    public String getCouleurVoiture() {
+        return couleurVoiture;
+    }
+
+    public void setCouleurVoiture(String couleurVoiture) {
+        this.couleurVoiture = couleurVoiture;
+    }
+
+    public String getNbrDePortes() {
+        return nbrDePortes;
+    }
+
+    public void setNbrDePortes(String nbrDePortes) {
+        this.nbrDePortes = nbrDePortes;
+    }
+
+    public String getTypeDeCoffre() {
+        return typeDeCoffre;
+    }
+
+    public void setTypeDeCoffre(String typeDeCoffre) {
+        this.typeDeCoffre = typeDeCoffre;
+    }
+
+    public String getOptions() {
+        return options;
+    }
+
+    public void setOptions(String options) {
+        this.options = options;
     }
 }

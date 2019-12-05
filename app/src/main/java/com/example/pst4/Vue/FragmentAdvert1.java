@@ -18,6 +18,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 public class FragmentAdvert1 extends Fragment {
+    String annee;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -37,7 +39,17 @@ public class FragmentAdvert1 extends Fragment {
         Spinner spinnerMarque = view.findViewById(R.id.spinner_marque);
         spinnerMarque.setAdapter(spinnerArrayAdapter);
 
+        annee = spinnerMarque.getSelectedItem().toString();
+
         return view;
 
+    }
+
+    public String getAnnee() {
+        return annee;
+    }
+
+    public void setAnnee(String annee) {
+        this.annee = annee;
     }
 }
