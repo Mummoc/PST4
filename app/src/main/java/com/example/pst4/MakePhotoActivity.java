@@ -5,13 +5,16 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import java.io.ByteArrayOutputStream;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,22 +23,18 @@ import androidx.core.content.ContextCompat;
 
 public class MakePhotoActivity extends Activity {
     final static String DEBUG_TAG = "MakePhotoActivity";
-    private static final int REQUEST_ID_IMAGE_CAPTURE = 100;
-    private static final int REQUEST_ID_READ_WRITE_PERMISSION = 99;
     public static final int REQUEST_ID_MULTIPLE_PERMISSIONS = 1;
-    private static final int REQUEST_IMAGE_CAPTURE = 1;
     private static final int REQUEST_TAKE_PHOTO = 1;
     private static final int TAKE_PICTURE = 1;
-    private Uri imageUri;
     Button makephoto;
     ImageView imageView;
-    String currentPhotoPath;
+    GridView gridView;
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.fragment_layout_sumup);
 
         requestPermissions();
 
@@ -54,7 +53,16 @@ public class MakePhotoActivity extends Activity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == TAKE_PICTURE && resultCode == RESULT_OK){
             Bitmap bitmap = (Bitmap) data.getExtras().get("data");
+            //On envoie l'image à la grille d'image view dans la classe CarPictureAdapter
+            imageView = new ImageView(this);
             imageView.setImageBitmap(bitmap);
+            CarPictureAdapter carPictureAdapter = new CarPictureAdapter(this);
+
+            //Boucler en fonction du nombre de photos prises
+            carPictureAdapter.bitmapList.add(bitmap);
+
+            gridView = findViewById(R.id.grid_view);
+            gridView.setAdapter(carPictureAdapter);
         }
     }
 
@@ -84,5 +92,13 @@ public class MakePhotoActivity extends Activity {
                 Toast.makeText(MakePhotoActivity.this, "Vous devez donnez la permission CAMERA", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private String bitmapToString(Bitmap bitmap){
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
+        byte []arr = byteArrayOutputStream.toByteArray();
+        String result = Base64.encodeToString(arr, Base64.DEFAULT);
+        return result;
     }
 }

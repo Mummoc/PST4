@@ -1,11 +1,15 @@
 package com.example.pst4;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CarPictureAdapter extends BaseAdapter {
     private Context mContext;
@@ -37,11 +41,15 @@ public class CarPictureAdapter extends BaseAdapter {
         }else{
             imageView = (ImageView) convertView;
         }
-        imageView.setImageResource(mThumbIds[position]);
+        Bitmap bitmap = bitmapList.get(0);
+        imageView.setImageBitmap(bitmap);
+        //imageView.setImageResource(mThumbIds[position]);
+
         return imageView;
     }
 
-    private Integer[] mThumbIds = {
+    public List<Bitmap> bitmapList = new ArrayList<Bitmap>();
+    public Integer[] mThumbIds = {
             R.drawable.ic_launcher_foreground, R.drawable.ic_launcher_foreground,
             R.drawable.ic_launcher_foreground, R.drawable.ic_launcher_foreground,
             R.drawable.ic_arrow_forward_24px, R.drawable.round_arrow_forward_black_18dp,
