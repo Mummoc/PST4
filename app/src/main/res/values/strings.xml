@@ -35,4 +35,8 @@
     <string name="new_account">CREATE AN ACCOUNT</string>
     <string name="text">text</string>
     <string name="car">car</string>
+    <string name="title">Title</string>
+    <string name="status">For sale</string>
+    <string name="company">company</string>
+    <string name="blablabla">blablabla</string>
 </resources>
