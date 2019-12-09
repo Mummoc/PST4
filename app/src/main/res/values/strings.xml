@@ -33,4 +33,5 @@
     <string name="etat">Etat :</string>
     <string name="welcome">Welcome!</string>
     <string name="new_account">CREATE AN ACCOUNT</string>
+    <string name="text">text</string>
 </resources>
