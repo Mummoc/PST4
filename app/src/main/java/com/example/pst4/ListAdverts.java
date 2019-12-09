@@ -28,7 +28,7 @@ public class ListAdverts extends Activity {
         recyclerView.setLayoutManager(layoutManager);
 
         // specify an adapter (see also next example)
-        String[] myDataset={"1","2","3","4"};
+        String[] myDataset={"Renault","Peugeot","3","4"};
         mAdapter = new MyAdapter(myDataset);
         recyclerView.setAdapter(mAdapter);
     }
