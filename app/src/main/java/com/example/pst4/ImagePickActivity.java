@@ -49,8 +49,10 @@ public class ImagePickActivity extends Activity {
             }
             stream = getContentResolver().openInputStream(data.getData());
             bitmap = BitmapFactory.decodeStream(stream);
+            CarPictureAdapter carPictureAdapter = new CarPictureAdapter(this);
+            carPictureAdapter.bitmapList.add(bitmap);
 
-            imageView.setImageBitmap(bitmap);
+            //imageView.setImageBitmap(bitmap);
         } catch (FileNotFoundException e){
             e.printStackTrace();
         } finally {

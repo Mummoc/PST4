@@ -10,7 +10,7 @@ import com.example.pst4.Vue.FragmentAdvert1;
 import com.example.pst4.Vue.FragmentAdvert2;
 import com.example.pst4.Vue.FragmentAdvert3;
 import com.example.pst4.Vue.FragmentAdvert4;
-import com.example.pst4.Vue.FragmentSumUp;
+import com.example.pst4.Vue.FragmentDataSumUp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -88,7 +88,10 @@ public class AdvertActivity extends AppCompatActivity {
                         break;
 
                     case 5 :
-                        ftFrag5.replace(R.id.fragment_container_content, new FragmentSumUp());
+                        /*ftFrag5.replace(R.id.fragment_container_content, new FragmentPhotoSumup());
+                        ftFrag5.addToBackStack(null);
+                        ftFrag5.commit();*/
+                        ftFrag5.replace(R.id.fragment_container_content, new FragmentDataSumUp());
                         ftFrag5.addToBackStack(null);
                         ftFrag5.commit();
                         break;

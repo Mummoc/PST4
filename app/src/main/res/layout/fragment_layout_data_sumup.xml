@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/voiture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Voiture" />
+    <TextView
+        android:id="@+id/etat_voiture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/voiture" />
+    <TextView
+        android:id="@+id/Textmarque"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/voiture"
+        android:text="Marque :" />
+    <TextView
+        android:id="@+id/marque"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/voiture"
+        android:layout_toRightOf="@+id/Textmarque" />
+    <TextView
+        android:id="@+id/textmodele"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Textmarque"
+        android:text="Modèle :" />
+    <TextView
+        android:id="@+id/modele"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Textmarque"
+        android:layout_toRightOf="@+id/textmodele" />
+    <TextView
+        android:id="@+id/textversion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textmodele"
+        android:text="Version :" />
+    <TextView
+        android:id="@+id/version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textmodele"
+        android:layout_toRightOf="@+id/textversion" />
+    <TextView
+        android:id="@+id/text_annee_de_fabrication"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textversion"
+        android:text="Année de fabrication :" />
+    <TextView
+        android:id="@+id/annee_de_fabrication"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textversion"
+        android:layout_toRightOf="@+id/text_annee_de_fabrication" />
+    <TextView
+        android:id="@+id/text_annee_circulation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_annee_de_fabrication"
+        android:text="Année de mise en circulation : " />
+    <TextView
+        android:id="@+id/annee_circulation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_annee_de_fabrication"
+        android:layout_toRightOf="@+id/text_annee_circulation" />
+    <TextView
+        android:id="@+id/text_plaque_immatriculation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_annee_circulation"
+        android:text="Plaque d'immatriculation" />
+    <TextView
+        android:id="@+id/plaque_immatriculation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_annee_circulation"
+        android:layout_toRightOf="@+id/text_plaque_immatriculation" />
+    <TextView
+        android:id="@+id/text_premiere_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_plaque_immatriculation"
+        android:text="Première main :" />
+    <TextView
+        android:id="@+id/premiere_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_plaque_immatriculation"
+        android:layout_toRightOf="@+id/text_premiere_main" />
+    <TextView
+        android:id="@+id/text_kilometrage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_premiere_main"
+        android:text="Kilométrage:"/>
+    <TextView
+        android:id="@+id/kilometrage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_premiere_main"
+        android:layout_toRightOf="@id/text_kilometrage" />
+    <TextView
+        android:id="@+id/text_couleur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_kilometrage"
+        android:text="Couleur : " />
+    <TextView
+        android:id="@+id/couleur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_kilometrage"
+        android:layout_toRightOf="@+id/text_couleur" />
+    <TextView
+        android:id="@+id/text_nombre_de_porte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_couleur"
+        android:text="Nombre de portes :" />
+    <TextView
+        android:id="@+id/nombre_de_porte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_couleur"
+        android:layout_toRightOf="@+id/text_nombre_de_porte" />
+    <TextView
+        android:id="@+id/text_type_coffre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_nombre_de_porte"
+        android:text="Type de coffre" />
+    <TextView
+        android:id="@+id/type_coffre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_nombre_de_porte"
+        android:layout_toRightOf="@+id/text_type_coffre" />
+    <TextView
+        android:id="@+id/text_option"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_type_coffre"
+        android:text="Option :" />
+    <TextView
+        android:id="@+id/option"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_type_coffre"
+        android:layout_toRightOf="@id/text_option" />
+
+
+
+
+
+</RelativeLayout>

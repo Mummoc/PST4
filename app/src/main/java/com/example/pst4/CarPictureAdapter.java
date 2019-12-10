@@ -49,6 +49,7 @@ public class CarPictureAdapter extends BaseAdapter {
     }
 
     public List<Bitmap> bitmapList = new ArrayList<Bitmap>();
+
     public Integer[] mThumbIds = {
             R.drawable.ic_launcher_foreground, R.drawable.ic_launcher_foreground,
             R.drawable.ic_launcher_foreground, R.drawable.ic_launcher_foreground,

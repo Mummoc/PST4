@@ -29,14 +29,14 @@ public class FragmentAdvert2 extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_layout_advert2, container, false);
-        List age = new ArrayList<Integer>();
+        List annee = new ArrayList<Integer>();
 
         //Marque de voiture
         for (int i = 1900; i<2019; i++){
-            age.add(Integer.toString(i));
+            annee.add(Integer.toString(i));
         }
-        ArrayAdapter<Integer> spinnerArrayAdapter = new ArrayAdapter<Integer>(Objects.requireNonNull(getContext()), R.layout.support_simple_spinner_dropdown_item, age);
-        ArrayAdapter<String> dropdownArrayAdapter = new ArrayAdapter<String>(Objects.requireNonNull(getContext()), R.layout.dropdown_menu_popup_item, age);
+        ArrayAdapter<Integer> spinnerArrayAdapter = new ArrayAdapter<Integer>(Objects.requireNonNull(getContext()), R.layout.support_simple_spinner_dropdown_item, annee);
+        ArrayAdapter<String> dropdownArrayAdapter = new ArrayAdapter<String>(Objects.requireNonNull(getContext()), R.layout.dropdown_menu_popup_item, annee);
         spinnerArrayAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         //dropdownArrayAdapter.setDropDownViewResource(R.layout.dropdown_menu_popup_item);
 

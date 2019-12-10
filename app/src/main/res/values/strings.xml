@@ -26,6 +26,25 @@
         <item>Citroën</item>
         <item>DS</item>
     </string-array>
+    <string-array name="spinner_modele">
+        <item>Clio</item>
+        <item>Zoé</item>
+        <item>Mégane</item>
+        <item>Scénique</item>
+        <item>206</item>
+        <item>207</item>
+        <item>208</item>
+        <item>508</item>
+        <item>C3</item>
+        <item>DS7 crossback</item>
+    </string-array>
+    <string-array name="spinner_version">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
     <string name="neuf">NEUF</string>
     <string name="occasion">Occasion</string>
     <string name="publication_d_un_nouveau_v_hicule">Publication_d_un_nouveau_v_hicule</string>

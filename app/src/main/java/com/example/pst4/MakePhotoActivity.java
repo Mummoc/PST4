@@ -7,14 +7,11 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.Toast;
-
-import java.io.ByteArrayOutputStream;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -29,12 +26,13 @@ public class MakePhotoActivity extends Activity {
     Button makephoto;
     ImageView imageView;
     GridView gridView;
+    Bitmap bitmap;
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_layout_sumup);
+        //setContentView(R.layout.fragment_layout_sumup);
 
         requestPermissions();
 
@@ -52,17 +50,17 @@ public class MakePhotoActivity extends Activity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == TAKE_PICTURE && resultCode == RESULT_OK){
-            Bitmap bitmap = (Bitmap) data.getExtras().get("data");
+            bitmap = (Bitmap) data.getExtras().get("data");
             //On envoie l'image à la grille d'image view dans la classe CarPictureAdapter
-            imageView = new ImageView(this);
-            imageView.setImageBitmap(bitmap);
+            //imageView = new ImageView(this);
+            //imageView.setImageBitmap(bitmap);
             CarPictureAdapter carPictureAdapter = new CarPictureAdapter(this);
 
             //Boucler en fonction du nombre de photos prises
             carPictureAdapter.bitmapList.add(bitmap);
 
-            gridView = findViewById(R.id.grid_view);
-            gridView.setAdapter(carPictureAdapter);
+            //gridView = findViewById(R.id.grid_view);
+            //gridView.setAdapter(carPictureAdapter);
         }
     }
 
@@ -94,11 +92,4 @@ public class MakePhotoActivity extends Activity {
         });
     }
 
-    private String bitmapToString(Bitmap bitmap){
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
-        byte []arr = byteArrayOutputStream.toByteArray();
-        String result = Base64.encodeToString(arr, Base64.DEFAULT);
-        return result;
-    }
 }

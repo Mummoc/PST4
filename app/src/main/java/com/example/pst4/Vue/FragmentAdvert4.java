@@ -35,6 +35,8 @@ public class FragmentAdvert4 extends Fragment {
                 imagePickActivity.onClick(v);*/
                 Intent intent = new Intent(getContext(), ImagePickActivity.class);
                 startActivity(intent);
+                /*ImagePickActivity imagePickActivity = new ImagePickActivity();
+                imagePickActivity.searchPicture();*/
 
                  etat = fragmentAdvert0.getEtat();
                 Toast.makeText(getContext(), "Etat = " + etat, Toast.LENGTH_SHORT).show();
