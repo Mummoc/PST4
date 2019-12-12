@@ -59,15 +59,15 @@ public class FragmentAdvert1 extends Fragment {
 
     }
 
-    public String getMarque() {
-        return spinnerMarqueController.getText().toString();
+    String getMarque() {
+        return spinnerMarqueController.getText();
     }
 
-    public String getModele(){
+    String getModele(){
         return spinnerModeleController.getText();
     }
 
-    public String getVersionVoiture(){
+    String getVersionVoiture(){
         return spinnerVersionController.getText();
     }
 }
