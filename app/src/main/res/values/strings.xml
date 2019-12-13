@@ -37,6 +37,9 @@
     <string name="car">car</string>
     <string name="title">Title</string>
     <string name="status">For sale</string>
-    <string name="company">company</string>
     <string name="blablabla">blablabla</string>
+    <string name="marque">Marque</string>
+    <string name="id">id</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
 </resources>
