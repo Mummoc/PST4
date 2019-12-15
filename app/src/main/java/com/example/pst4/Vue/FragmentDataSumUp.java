@@ -1,6 +1,11 @@
 package com.example.pst4.Vue;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,10 +16,12 @@ import com.example.pst4.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -37,23 +44,55 @@ public class FragmentDataSumUp extends Fragment {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
+    private List<String> input = new ArrayList<>();
+    String marque;
+    String modele;
+    String version;
+
+    private final BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if("DATA_BRAND".equals(intent.getAction())){
+
+                Log.e("Bundle ", "YOOOOOOOOOOOOOOOOOOOOOOOOOO");
+                    marque = intent.getStringExtra("DATA_CAR");
+                    modele = intent.getStringExtra("DATA_MODELE");
+                    version = intent.getStringExtra("DATA_VERSION");
+                    Log.e("GET EXTRAS", marque);
+
+
+                Log.e("RESULt ", "FIN IF");
+                /*intent.getSerializableExtra("DATA_CAR");
+                intent.getAction();
+                marque = intent.getStringExtra("DATA_CAR");
+                modele = intent.getStringExtra("DATA_MODELE");
+                version = intent.getStringExtra("DATA_VERSION");*/
+
+            }
+        }
+
+
+    };
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_layout_data_sumup, container, false);
-
+        LocalBroadcastManager.getInstance(Objects.requireNonNull(getContext())).registerReceiver(broadcastReceiver, new IntentFilter("DATA_CAR"));
         recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
 
         layoutManager = new LinearLayoutManager(getContext());
 
         recyclerView.setLayoutManager(layoutManager);
-        List<String> input = new ArrayList<>();
+        Log.i("MY TAG", "YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
         input.add("Voiture : ");
         input.add("Marque : ");
+        input.add(marque);
         input.add("Modèle : ");
+        input.add(modele);
         input.add("Version : ");
+        input.add(version);
         input.add("Année de fabrication : ");
         input.add("Année de mise en circulation : ");
         input.add("Plaque d'immatriculation : ");
@@ -63,11 +102,15 @@ public class FragmentDataSumUp extends Fragment {
         input.add("Nombre de portes : ");
         input.add("Type de coffre : ");
         input.add("Option : ");
-
-
         mAdapter = new RecyclerAdapter(input);
 
         recyclerView.setAdapter(mAdapter);
+
+
+
+
+
+
         /*int i;
         //TextViews contenant les données
         textViewVoiture = view.findViewById(R.id.etat_voiture);

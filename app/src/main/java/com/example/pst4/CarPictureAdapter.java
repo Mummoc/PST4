@@ -13,6 +13,7 @@ import java.util.List;
 
 public class CarPictureAdapter extends BaseAdapter {
     private Context mContext;
+    MakePhotoActivity makePhotoActivity;
 
     public CarPictureAdapter(Context context ){
         this.mContext = context;

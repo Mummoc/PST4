@@ -2,6 +2,7 @@ package com.example.pst4;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -27,12 +28,14 @@ public class MakePhotoActivity extends Activity {
     ImageView imageView;
     GridView gridView;
     Bitmap bitmap;
+    CarPictureAdapter cpa;
+    private Context mContext;
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.fragment_layout_sumup);
+        setContentView(R.layout.fragment_layout_sumup);
 
         requestPermissions();
 
@@ -59,8 +62,8 @@ public class MakePhotoActivity extends Activity {
             //Boucler en fonction du nombre de photos prises
             carPictureAdapter.bitmapList.add(bitmap);
 
-            //gridView = findViewById(R.id.grid_view);
-            //gridView.setAdapter(carPictureAdapter);
+            gridView = findViewById(R.id.grid_view);
+            gridView.setAdapter(carPictureAdapter);
         }
     }
 
@@ -91,5 +94,9 @@ public class MakePhotoActivity extends Activity {
             }
         });
     }
+
+    /*public CarPictureAdapter pictureAdapter(CarPictureAdapter carPictureAdapter){
+        this.cpa = carPictureAdapter;
+    }*/
 
 }

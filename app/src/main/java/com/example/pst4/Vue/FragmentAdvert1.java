@@ -1,6 +1,7 @@
 package com.example.pst4.Vue;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import com.example.pst4.R;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 public class FragmentAdvert1 extends Fragment {
     private Context mContext;
@@ -54,6 +56,14 @@ public class FragmentAdvert1 extends Fragment {
         spinnerMarqueController.setSpinnerControler(spinnerMarque);
         spinnerModeleController.setSpinnerControler(spinnerModele);
         spinnerVersionController.setSpinnerControler(spinnerVersion);
+
+        //Envoyer la donnée
+        final Intent intent = new Intent("DATA_BRAND");
+        intent.putExtra("DATA_BRAND",spinnerMarqueController.getText());
+        intent.putExtra("DATA_MODELE",spinnerModeleController.getText());
+        intent.putExtra("DATA_VERSION",spinnerVersionController.getText());
+        LocalBroadcastManager.getInstance(getContext()).sendBroadcast(intent);
+
 
         return view;
 
