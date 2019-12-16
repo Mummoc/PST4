@@ -2,13 +2,27 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Marque : "
+        android:layout_above="@+id/spinner_marque"
+        android:paddingStart="@dimen/marge"/>
     <Spinner
         android:id="@+id/spinner_marque"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="100dp"
         android:layout_centerHorizontal="true"
-        android:layout_above="@+id/spinner_modele"/>
+        android:layout_above="@+id/text_spinnerModele"/>
+
+    <TextView
+        android:id="@+id/text_spinnerModele"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Modèle : "
+        android:layout_above="@+id/spinner_modele"
+        android:paddingStart="@dimen/marge"/>
 
     <Spinner
         android:id="@+id/spinner_modele"
@@ -16,18 +30,19 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_marginBottom="100dp" />
+
+    <TextView
+        android:id="@+id/text_spinnerVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Version :"
+        android:layout_below="@+id/spinner_modele"
+        android:paddingStart="@dimen/marge"/>
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/spinner_version"
-        android:layout_below="@+id/spinner_modele"
+        android:layout_below="@+id/text_spinnerVersion"
         android:layout_marginBottom="30dp"
         android:layout_centerHorizontal="true"/>
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="FRAGMENT HOME"/>
-
 </RelativeLayout>

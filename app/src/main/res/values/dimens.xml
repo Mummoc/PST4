@@ -4,4 +4,5 @@
     <dimen name="connect_button_margin">15dp</dimen>
     <dimen name="width_textfield">40mm</dimen>
     <dimen name="espace_entre_element">40dp</dimen>
+    <dimen name="marge">50dp</dimen>
 </resources>

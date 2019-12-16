@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.example.pst4.Vue.FragmentAdvert0;
 import com.example.pst4.Vue.FragmentAdvert1;
@@ -20,10 +21,13 @@ import androidx.fragment.app.FragmentTransaction;
 public class AdvertActivity extends AppCompatActivity {
 
     private Button suivant;
+
     private Button retour;
     private Button occasion;
     private Button neuf;
     public Integer etat = 0;
+
+    ImageView next;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -47,6 +51,7 @@ public class AdvertActivity extends AppCompatActivity {
         final FragmentTransaction ftBack3 = fm1.beginTransaction();
         final FragmentTransaction ftBack4 = fm1.beginTransaction();
 
+        //final ForwardToDone morphView = findViewById(R.id.submit);
 
 
         ftStack.add(R.id.fragment_container_content, fragmentAdvert0); //new BackAndForwardFragment()
@@ -56,9 +61,12 @@ public class AdvertActivity extends AppCompatActivity {
 
         suivant = findViewById(R.id.submit);
         retour = findViewById(R.id.retour);
+        next = findViewById(R.id.test);
+
+        final ForwardToDone forwardToDone = new ForwardToDone(this);
 
 
-        suivant.setOnClickListener(new View.OnClickListener() {
+        next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 etat++;
@@ -92,6 +100,7 @@ public class AdvertActivity extends AppCompatActivity {
                         ftFrag5.addToBackStack(null);
                         ftFrag5.commit();*/
                         ftFrag5.replace(R.id.fragment_container_content, new FragmentDataSumUp());
+                        forwardToDone.morph(next);
                         ftFrag5.addToBackStack(null);
                         ftFrag5.commit();
                         break;
@@ -104,11 +113,15 @@ public class AdvertActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (etat >=1){
+                    if (etat == 5){
+                        //forwardToDone.unmorph(next);
+                    }
                     etat--;
                     onBackPressed();
                 }
             }
         });
+
     }
 
     @Override

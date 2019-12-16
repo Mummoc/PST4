@@ -8,18 +8,19 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/fragment_container_content"/>
-    <!--<Spinner
-        android:id="@+id/spinner_marque"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>-->
+        android:id="@+id/fragment_container_content">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/search"
-        android:layout_above="@id/retour"/>
-    <Button
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/retour"
+            style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_rounded_button"
+            app:icon="@drawable/ic_arrow_back_24px"
+            app:iconSize="100px" />
+    </FrameLayout>
+
+    <!--<Button
         android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,7 +28,7 @@
         android:layout_alignParentBottom="true"
         android:text="bouton suivant"
         android:background="@drawable/shape_rounded_button"
-        />
+        />-->
     <!--<com.google.android.material.button.MaterialButton
         android:id="@+id/submit"
         android:layout_width="wrap_content"
@@ -35,8 +36,19 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
-        app:icon="@drawable/round_arrow_forward_black_18dp"
+        app:icon="@drawable/avd_anim"
+        app:iconSize="100px"
         android:background="@drawable/shape_rounded_button"/>-->
+
+    <ImageView
+        android:id="@+id/test"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/avd_anim"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:tint="@color/colorAccent"/>
+
     <!--<ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -45,13 +57,13 @@
         android:id="@+id/submit"
         android:src="@drawable/ic_arrow_forward_24px"/>-->
 
-    <Button
+    <!--<Button
         android:id="@+id/retour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toEndOf="@id/submit"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:text="bouton retour" />
+        android:text="bouton retour" />-->
 
 </RelativeLayout>

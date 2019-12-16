@@ -53,20 +53,9 @@ public class FragmentDataSumUp extends Fragment {
         @Override
         public void onReceive(Context context, Intent intent) {
             if("DATA_BRAND".equals(intent.getAction())){
-
-                Log.e("Bundle ", "YOOOOOOOOOOOOOOOOOOOOOOOOOO");
                     marque = intent.getStringExtra("DATA_CAR");
                     modele = intent.getStringExtra("DATA_MODELE");
                     version = intent.getStringExtra("DATA_VERSION");
-                    Log.e("GET EXTRAS", marque);
-
-
-                Log.e("RESULt ", "FIN IF");
-                /*intent.getSerializableExtra("DATA_CAR");
-                intent.getAction();
-                marque = intent.getStringExtra("DATA_CAR");
-                modele = intent.getStringExtra("DATA_MODELE");
-                version = intent.getStringExtra("DATA_VERSION");*/
 
             }
         }
@@ -155,4 +144,5 @@ public class FragmentDataSumUp extends Fragment {
 
         return view;
     }
+
 }
