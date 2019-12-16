@@ -23,10 +23,10 @@ La création d'annonces est notre cas d'utilisation qui sera présenté lors de 
 * Utilisation appareil photo numérique
 * Accès à la galerie d'images
 * Bonus : 
-  '*Animation de bouton'
+  * Animation de bouton
   
 ## Fonctionnalités
-![Screenshot](presentation.jpg)
+![Screenshot](presentation.jpg =100x20)
 Exemple d'une vue au sein d'un fragment, dans laquelle on va entrer quelques informations sur notre voiture.
 
 > Notez l'utilisation de la librairie de Material Design avec par exemple ces champs de texte.
