@@ -27,7 +27,11 @@ La création d'annonces est notre cas d'utilisation qui sera présenté lors de 
   
 ## Fonctionnalités
 ![Screenshot](presentation.jpg)
-Exemple d'une vue au sein d'un fragment, dans laquelle on va entrer quelques informations sur notre voiture
+Exemple d'une vue au sein d'un fragment, dans laquelle on va entrer quelques informations sur notre voiture.
+
+> Notez l'utilisation de la librairie de Material Design avec par exemple ces champs de texte.
+
+![screenshot](textinput.jpg)
 
 Après avoir rempli toutes les informations demandées pour votre voiture, il vous sera demandé d'ajouter une photo de votre voiture.
 ![Screenshot](ajout de photo.jpg)
@@ -37,14 +41,22 @@ Deux méthodes d'ajout de photo sont proposées :
 * Soit une photo déjà prise, depuis la gallerie
 
 Si vous choisissez d'utiliser la caméra, alors il vous sera demandé une autorisation pour accéder à la caméra
-///////////////////////////PHOTO
+![screenshot](autorisation.jpg)
 
 Une fois acceptée, vous pouvez prendre votre photo.
-////////////////////////Photo
+![screenshot](camera.jpg)
 
 Si vous choisissez de prendre une photo depuis votre galerie, l'applicatio accèdera directement à votre galerie.
-//////////////////////////////////Photo
+![screenshot](galerie.jpg)
 
-Une votre image choisie ou votre photo prise, elle sera ajouter dans une grille.
+Dès que votre image sera choisie ou votre photo sera prise, elle sera ajouter dans une grille.
 
-note: petit bug, si ous ne choisissez pas d'ajouter d'image ou de photo, vous aurez accès à une liste récapitulative de vos données.
+:warning: Petit bug, si vous ne choisissez pas d'ajouter d'image ou de photo, vous aurez accès à une liste récapitulative de vos données.
+
+![screenshot](collapsing.jpg)
+
+> Notez que le bouton suivant s'est transformé en bouton validé. Faite retour, et constater que la transformation inverse s'effectue.
+> Dans la collapsing toolbar a été insérer le logo de la startup
+
+
+
