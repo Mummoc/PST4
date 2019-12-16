@@ -26,34 +26,34 @@ La création d'annonces est notre cas d'utilisation qui sera présenté lors de 
   * Animation de bouton
   
 ## Fonctionnalités
-![Screenshot](presentation.jpg =100x20)
+![Screenshot](presentation.png)
 Exemple d'une vue au sein d'un fragment, dans laquelle on va entrer quelques informations sur notre voiture.
 
 > Notez l'utilisation de la librairie de Material Design avec par exemple ces champs de texte.
 
-![screenshot](textinput.jpg)
+![screenshot](textinput.png)
 
 Après avoir rempli toutes les informations demandées pour votre voiture, il vous sera demandé d'ajouter une photo de votre voiture.
-![Screenshot](ajout de photo.jpg)
+![Screenshot](ajout de photo.png)
 
 Deux méthodes d'ajout de photo sont proposées :
 * Soit une prise de photo,  avec l'appareil photo
 * Soit une photo déjà prise, depuis la gallerie
 
 Si vous choisissez d'utiliser la caméra, alors il vous sera demandé une autorisation pour accéder à la caméra
-![screenshot](autorisation.jpg)
+![screenshot](autorisation.png)
 
 Une fois acceptée, vous pouvez prendre votre photo.
-![screenshot](camera.jpg)
+![screenshot](camera.png)
 
 Si vous choisissez de prendre une photo depuis votre galerie, l'applicatio accèdera directement à votre galerie.
-![screenshot](galerie.jpg)
+![screenshot](galerie.png)
 
 Dès que votre image sera choisie ou votre photo sera prise, elle sera ajouter dans une grille.
 
 :warning: Petit bug, si vous ne choisissez pas d'ajouter d'image ou de photo, vous aurez accès à une liste récapitulative de vos données.
 
-![screenshot](collapsing.jpg)
+![screenshot](collapsing.png)
 
 > Notez que le bouton suivant s'est transformé en bouton validé. Faite retour, et constater que la transformation inverse s'effectue.
 > Dans la collapsing toolbar a été insérer le logo de la startup
