@@ -28,3 +28,23 @@ La création d'annonces est notre cas d'utilisation qui sera présenté lors de 
 ## Fonctionnalités
 ![Screenshot](presentation.jpg)
 Exemple d'une vue au sein d'un fragment, dans laquelle on va entrer quelques informations sur notre voiture
+
+Après avoir rempli toutes les informations demandées pour votre voiture, il vous sera demandé d'ajouter une photo de votre voiture.
+![Screenshot](ajout de photo.jpg)
+
+Deux méthodes d'ajout de photo sont proposées :
+* Soit une prise de photo,  avec l'appareil photo
+* Soit une photo déjà prise, depuis la gallerie
+
+Si vous choisissez d'utiliser la caméra, alors il vous sera demandé une autorisation pour accéder à la caméra
+///////////////////////////PHOTO
+
+Une fois acceptée, vous pouvez prendre votre photo.
+////////////////////////Photo
+
+Si vous choisissez de prendre une photo depuis votre galerie, l'applicatio accèdera directement à votre galerie.
+//////////////////////////////////Photo
+
+Une votre image choisie ou votre photo prise, elle sera ajouter dans une grille.
+
+note: petit bug, si ous ne choisissez pas d'ajouter d'image ou de photo, vous aurez accès à une liste récapitulative de vos données.
