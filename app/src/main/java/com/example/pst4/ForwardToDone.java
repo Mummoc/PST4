@@ -11,6 +11,10 @@ import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat;
 public class ForwardToDone extends AppCompatImageView {
     int switchNumber = 0;
 
+    public void setSwitchNumber(int switchNumber) {
+        this.switchNumber = switchNumber;
+    }
+
     public ForwardToDone(Context context) {
         super(context);
     }
@@ -30,20 +34,20 @@ public class ForwardToDone extends AppCompatImageView {
             }
 
             switchNumber++;
-        }/*else {
-                    next.setImageDrawable(getResources().getDrawable(R.drawable.avd_animreverse));
+        }else {
+                    next.setImageDrawable(getResources().getDrawable(R.drawable.avd_done_to_forward));
                     Drawable drawable = next.getDrawable();
 
                     if(drawable instanceof AnimatedVectorDrawableCompat){
-                        avd = (AnimatedVectorDrawableCompat) drawable;
+                        AnimatedVectorDrawableCompat avd = (AnimatedVectorDrawableCompat) drawable;
                         avd.start();
                     }else if(drawable instanceof  AnimatedVectorDrawable){
-                        avd2 = (AnimatedVectorDrawable) drawable;
+                        AnimatedVectorDrawable avd2 = (AnimatedVectorDrawable) drawable;
                         avd2.start();
                     }
 
                     switchNumber--;
-                }*/
+                }
     }
 
     }

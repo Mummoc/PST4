@@ -109,11 +109,16 @@ public class AdvertActivity extends AppCompatActivity {
 
         });
 
+
         retour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (etat >=1){
                     if (etat == 5){
+                        //On set à 1 la variable qui va déterminer le sens de l'animation
+                        //Ici on va configurer l'animation de l'icone done_all vers l'icone arrow forward
+                        forwardToDone.setSwitchNumber(1);
+                        forwardToDone.morph(next);
                         //forwardToDone.unmorph(next);
                     }
                     etat--;
