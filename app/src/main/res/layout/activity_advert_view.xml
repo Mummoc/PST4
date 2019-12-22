@@ -6,7 +6,6 @@
     android:layout_alignStart="@+id/text"
     android:orientation="vertical"
     android:id="@+id/listview">
-    <!---android:weightSm="100"!-->
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view"
@@ -21,68 +20,76 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:orientation="horizontal"
+            android:weightSum="4"
+            android:baselineAligned="false">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_weight="1"
             >
 
             <ImageView
                 android:id="@+id/car_picture"
-                android:layout_width="5dp"
-                android:layout_height="99dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_margin="4dp"
-                android:layout_weight="1"
                 android:contentDescription="@string/car"
                 android:src="@drawable/car" />
 
-            <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:orientation="vertical">
+            <TextView
+                android:id="@+id/marque"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|center_horizontal"
+                android:text="@string/marque"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_marginStart="10dp"/>
 
-        <TextView
-            android:id="@+id/text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            android:text="@string/marque"
-            android:textAppearance="?android:attr/textAppearanceLarge"/>
+            <TextView
+                android:id="@+id/modele"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|center_horizontal"
+                android:layout_marginStart="15dp"
+                android:text="@string/Modele"
+                android:textColor="@color/black" />
 
-                <TextView
+            <TextView
                     android:id="@+id/company"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="5dp"
+                    android:layout_gravity="center|center_horizontal"
                     android:text="@string/id"
                     android:textSize="18sp"
-                    android:textStyle="italic" />
+                    android:textStyle="italic"
+                    android:layout_marginStart="15dp"/>
+        </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginStart="70dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:orientation="horizontal">
 
-                    <Button
-                        android:id="@+id/edit"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/edit"/>
-                <Button
+                <ImageView
+                    android:id="@+id/edit"
+                    android:layout_width="49dp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/todo"
+                    android:scaleType="fitEnd"
+                    android:src="@drawable/ic_edit" />
+
+                <ImageView
                     android:id="@+id/delete"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/delete" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/todo"
+                    android:scaleType="fitEnd"
+                    android:src="@drawable/ic_delete" />
 
-                </LinearLayout>
-
-            </LinearLayout>
             </LinearLayout>
         </LinearLayout>
 

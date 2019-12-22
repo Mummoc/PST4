@@ -5,60 +5,62 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.pst4.AdvertView;
-import com.example.pst4.ListAdverts;
 import com.example.pst4.models.Advert;
 import com.example.pst4.R;
 
 import java.util.ArrayList;
 
-import androidx.lifecycle.AndroidViewModel;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class ListAdvertsAdapter extends RecyclerView.Adapter<ListAdvertsAdapter.MyViewHolder> {
     private ArrayList<Advert> mDataset;
     private Context mContext;
     private OnAdvertListener mOnAdvertListener;
-    // Provide a reference to the views for each data item
-    // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
     public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        // each data item is just a string in this case
         private TextView textView;
-        private Button editButton;
-        private Button deleteButton;
         private LinearLayout parentLayout;
-        //...
+        public ImageView mDelete;
+        public ImageView mEdit;
         OnAdvertListener onAdvertListener;
-        public MyViewHolder(View v, OnAdvertListener onAdvertListener) {
+        public MyViewHolder(View v, final OnAdvertListener onAdvertListener) {
             super(v);
-            textView = v.findViewById(R.id.text);
-            editButton = v.findViewById(R.id.edit);
-            deleteButton = v.findViewById(R.id.delete);
+            textView = v.findViewById(R.id.marque   );
             parentLayout = v.findViewById(R.id.listview);
+            mDelete = v.findViewById(R.id.delete);
+            mEdit = v.findViewById(R.id.edit);
             this.onAdvertListener = onAdvertListener;
-            itemView.setOnClickListener(this);
-            //editButton.setOnClickListener(this);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onAdvertListener.onAdvertClick((getAdapterPosition()));
+                }
+            });
+            mDelete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onAdvertListener.onDeleteClick((getAdapterPosition()));
+                }
+            });
         }
 
         @Override
         public void onClick(View view) {
-            onAdvertListener.onAdvertClick((getAdapterPosition()));
+
         }
     }
 
-    // Provide a suitable constructor (depends on the kind of dataset)
     public ListAdvertsAdapter(ArrayList<Advert> myDataset, Context context, OnAdvertListener onAdvertListener) {
         mDataset = myDataset;
         mContext = context;
         mOnAdvertListener = onAdvertListener;
     }
-
     // Create new views (invoked by the layout manager)
     @Override
     public ListAdvertsAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent,
@@ -72,9 +74,9 @@ public class ListAdvertsAdapter extends RecyclerView.Adapter<ListAdvertsAdapter.
 
     // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(MyViewHolder holder, final int position) {
         holder.textView.setText(mDataset.get(position).getBrand());
-        holder.editButton.setOnClickListener(new View.OnClickListener() {
+        holder.mEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast myToast = Toast.makeText(mContext, "Editing the advert", Toast.LENGTH_SHORT);
@@ -83,13 +85,12 @@ public class ListAdvertsAdapter extends RecyclerView.Adapter<ListAdvertsAdapter.
                 mContext.startActivity(intent);
             }
         });
-        holder.deleteButton.setOnClickListener(new View.OnClickListener() {
+        /*holder.deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast myToast = Toast.makeText(mContext, "Deleting the advert", Toast.LENGTH_SHORT);
-                myToast.show();
+                mOnAdvertListener.onDeleteClick(position);
             }
-        });
+        });*/
     }
     @Override
     public int getItemCount() {
@@ -98,5 +99,10 @@ public class ListAdvertsAdapter extends RecyclerView.Adapter<ListAdvertsAdapter.
 
     public interface OnAdvertListener {
         void onAdvertClick(int position);
+        void onDeleteClick(int position);
+    }
+
+    public void setOnAdvertListener(OnAdvertListener onAdvertListener) {
+        onAdvertListener = mOnAdvertListener;
     }
 }

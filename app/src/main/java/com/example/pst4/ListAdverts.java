@@ -3,6 +3,9 @@
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
+
 import com.example.pst4.controller.ListAdvertsAdapter;
 import com.example.pst4.models.Advert;
 
@@ -11,9 +14,12 @@ import java.util.ArrayList;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class ListAdverts extends Activity implements ListAdvertsAdapter.OnAdvertListener {
+import static android.widget.Toast.LENGTH_SHORT;
+import static com.example.pst4.R.string.*;
+
+ public class ListAdverts extends Activity implements ListAdvertsAdapter.OnAdvertListener {
     private RecyclerView recyclerView;
-    private RecyclerView.Adapter mAdapter;
+    private ListAdvertsAdapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
 
     private ArrayList<Advert> mAdverts = new ArrayList<>() ;
@@ -29,13 +35,32 @@ public class ListAdverts extends Activity implements ListAdvertsAdapter.OnAdvert
         addAdvert();
         mAdapter = new ListAdvertsAdapter(mAdverts,ListAdverts.this,ListAdverts.this);
         recyclerView.setAdapter(mAdapter);
+
+        /*mAdapter.setOnAdvertListener(new ListAdvertsAdapter.OnAdvertListener() {
+            @Override
+            public void onAdvertClick(int position) {
+                mAdverts.get(position);
+            }
+
+            @Override
+            public void onDeleteClick(int position) {
+
+            }
+        });*/
     }
 
+     @Override
+              public void onAdvertClick(int position) {
+                  mAdverts.get(position);
+                  Intent intent = new Intent(this,AdvertView.class);
+                  startActivity(intent);
+                  mAdapter.notifyItemChanged(position);
+              }
     @Override
-    public void onAdvertClick(int position) {
-        mAdverts.get(position);
-        Intent intent = new Intent(this,AdvertView.class);
-        startActivity(intent);
+    public void onDeleteClick(int position) {
+        Advert ad = mAdverts.get(position);
+        removeAdvert(ad);
+        mAdapter.notifyItemChanged(position);
     }
     public void addAdvert() {
         //TODO
